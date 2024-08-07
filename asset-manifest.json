@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/website/static/css/main.afb90eb5.css",
+    "main.js": "/website/static/js/main.c5a74864.js",
+    "static/js/453.bb828c5d.chunk.js": "/website/static/js/453.bb828c5d.chunk.js",
+    "static/media/cafe.png": "/website/static/media/cafe.b29ffebd549be7ce1967.png",
+    "static/media/elsal.png": "/website/static/media/elsal.413ae7b085d499b7e550.png",
+    "static/media/gbb.png": "/website/static/media/gbb.ef3ecd96459cc67fa761.png",
+    "static/media/node.png": "/website/static/media/node.11d27271a48f18a1a5a2.png",
+    "static/media/resume.pdf": "/website/static/media/resume.347af2191b0d62052a00.pdf",
+    "static/media/sq.png": "/website/static/media/sq.1088b3a47f5daa08a84c.png",
+    "static/media/self.jpeg": "/website/static/media/self.fa2806678755a63ccb12.jpeg",
+    "static/media/r.png": "/website/static/media/r.357d09f03b18c717a2b1.png",
+    "static/media/htm.png": "/website/static/media/htm.5b589e8017e763cefd1f.png",
+    "static/media/JKC.png": "/website/static/media/JKC.8ca03159774d452d8673.png",
+    "static/media/express.png": "/website/static/media/express.d62aeac2a3d67843cc7e.png",
+    "static/media/react.png": "/website/static/media/react.112167e24f83f2a6032f.png",
+    "static/media/java.png": "/website/static/media/java.51da610b5197dbec9cd4.png",
+    "static/media/dj.png": "/website/static/media/dj.b524e672fe23e113e31d.png",
+    "static/media/c++.png": "/website/static/media/c++.053a898d752aef72651e.png",
+    "static/media/mongo.png": "/website/static/media/mongo.fd0fe1891a7bde0cca90.png",
+    "static/media/google.png": "/website/static/media/google.81f8bc1f0158708e8649.png",
+    "static/media/pyy.png": "/website/static/media/pyy.d8231af29d99bf5b4a42.png",
+    "static/media/css.png": "/website/static/media/css.d2596015e9ea3e8da7ab.png",
+    "static/media/vs.png": "/website/static/media/vs.393df87377162101e54c.png",
+    "static/media/C_Logo.png": "/website/static/media/C_Logo.bbbbbabc8c191bfb99bf.png",
+    "index.html": "/website/index.html",
+    "main.afb90eb5.css.map": "/website/static/css/main.afb90eb5.css.map",
+    "main.c5a74864.js.map": "/website/static/js/main.c5a74864.js.map",
+    "453.bb828c5d.chunk.js.map": "/website/static/js/453.bb828c5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afb90eb5.css",
+    "static/js/main.c5a74864.js"
+  ]
+}
