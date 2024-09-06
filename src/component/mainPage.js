@@ -123,7 +123,7 @@ const AppContainer = styled.div`
 `;
 
 const Background = styled.div`
-  background: #002244;
+  background: black;
   display: flex;
   flex-direction: column;
   color: white;
