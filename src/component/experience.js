@@ -149,7 +149,7 @@ const GradientOverlay = styled.div`
 `;
 
 const Background = styled.div`
-  background: #002244;
+  background: black;
   width: 100%;
   height: 100%;
   display: flex;
