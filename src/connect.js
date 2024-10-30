@@ -7,7 +7,7 @@ import gmail from "./images/gmial.png";
 const SocialMedia = () => {
     return (
         <Container>
-            <Link href="https://www.linkedin.com/in/ehernandez12/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/ehernand/" target="_blank" rel="noopener noreferrer">
                 <Size src={linkedin} alt="LinkedIn" />
             </Link>
             <Link href="https://github.com/eduzeu" target="_blank" rel="noopener noreferrer">
