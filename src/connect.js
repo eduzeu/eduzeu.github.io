@@ -25,7 +25,7 @@ const Container = styled.div`
     gap: 25px; /* Adjust gap between images as needed */
     align-items: center; /* Center items vertically */
     height: 150px; /* Adjust height as needed to see the alignment effect */
-    margin-top: -5px;
+    margin-top: -6px;
    
 `;
 
