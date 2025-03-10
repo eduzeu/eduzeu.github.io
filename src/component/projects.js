@@ -4,6 +4,7 @@ import Navbar from '../NavBar';
 import web from "../images/personalweb.png";
 import music from "../images/music.png";
 import trivia from "../images/trivi.png";
+import wifly from "../images/wifly.png";
 
 function Projects() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -20,6 +21,25 @@ function Projects() {
                 <Navbar />
                 <Content>
                     <ExperienceDetails>
+                    <ExperienceItem>
+                            <ClickableBox>
+                                <DateRange>WiFly NYC </DateRange>
+                                <JobDescription>
+                               WiFly NYC is your go-to guide for finding free WiFi hotspots and cozy
+                              spaces to work, study, or simply unwind as well as events happening in the city, such as
+                              festivals, street markets, or sports events.
+                                    <ButtonContainer>
+                                        <ScrollButton>HTML</ScrollButton>
+                                        <ScrollButton>CSS</ScrollButton>
+                                        <ScrollButton>JavaScript</ScrollButton>
+                                    </ButtonContainer>
+                                </JobDescription>
+                            </ClickableBox>
+                            <a href = "https://github.com/eduzeu/546website">
+                            <Image src={wifly} alt="wifly" />
+                            </a>
+                        </ExperienceItem>
+
                         <ExperienceItem>
                             <ClickableBox>
                                 <DateRange>Personal Website</DateRange>
