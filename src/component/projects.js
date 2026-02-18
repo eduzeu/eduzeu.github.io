@@ -5,7 +5,6 @@ import web from "../images/personalweb.png";
 import music from "../images/music.png";
 import trivia from "../images/trivi.png";
 import wifly from "../images/wifly.png";
-import { Link } from "react-router-dom";
 import Chip from "./Chip";
 
 function Projects() {

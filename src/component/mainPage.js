@@ -3,8 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import Navbar from '../NavBar';
 import self from "../images/self.jpeg";
 import { FaArrowDown } from 'react-icons/fa';
-import ProgrammingLanguages from '../skillset/skills';
-import Frameworks from '../skillset/frames';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
 import Chip from './Chip';
