@@ -9,7 +9,6 @@ import Chip from './Chip';
 
 const MainPage = () => {
   const skillsRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -23,7 +22,6 @@ const MainPage = () => {
   };
 
   const handleSkillsClick = () => {
-    setIsVisible(true);
     scrollToSkills();
   };
 
@@ -111,21 +109,7 @@ const MainPage = () => {
           </HeroContainer>
         </HeroSection>
 
-        <SkillsSection ref={skillsRef}>
-          <SectionHeader>
-            {/* <SectionTitle>Skillset</SectionTitle>
-            <SectionSubtitle>Tools I use to ship real products.</SectionSubtitle> */}
-          </SectionHeader>
-
-          {/* <SkillsContainer>
-            {isVisible && (
-              <>
-                <ProgrammingLanguages />
-                <Frameworks />
-              </>
-            )}
-          </SkillsContainer> */}
-        </SkillsSection>
+  
       </Background>
     </AppContainer>
   );
@@ -370,38 +354,6 @@ const Chips = styled.div`
   @media (max-width: 900px) {
     justify-content: center;
   }
-`;
-
-
-
-
-const SkillsSection = styled.section`
-  width: min(1120px, 92vw);
-  margin: 0 auto;
-  padding: clamp(10px, 2vw, 20px) 0 clamp(50px, 7vw, 90px);
-`;
-
-const SectionHeader = styled.div`
-  margin-top: 10px;
-  margin-bottom: 22px;
-`;
-
-const SectionTitle = styled.h2`
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(22px, 2.3vw, 30px);
-  font-weight: 700;
-`;
-
-const SectionSubtitle = styled.p`
-  margin: 8px 0 0;
-  font-family: 'Poppins', sans-serif;
-  opacity: 0.8;
-  font-size: 14px;
-`;
-
-const SkillsContainer = styled.div`
-  margin-top: 10px;
 `;
 
 /* mouse effect — kept */
