@@ -7,288 +7,406 @@ import ProgrammingLanguages from '../skillset/skills';
 import Frameworks from '../skillset/frames';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
+import Chip from './Chip';
 
 const MainPage = () => {
-  const programmingLanguagesRef = useRef(null);
+  const skillsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  
-
   const handleMouseMove = (e) => {
-    const { clientX: x, clientY: y } = e;
-    setMousePos({ x, y });
+    setMousePos({ x: e.clientX, y: e.clientY });
   };
 
-  const scrollToSection = () => {
+  const scrollToSkills = () => {
     setTimeout(() => {
-      if (programmingLanguagesRef.current) {
-        programmingLanguagesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 100);
+      skillsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
   };
 
-  const handleScrollButtonClick = () => {
+  const handleSkillsClick = () => {
     setIsVisible(true);
-    scrollToSection();
+    scrollToSkills();
+  };
+
+  const handleProjectsClick = () => {
+    // Hook this up when you add a Projects section or route
+    // document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <AppContainer onMouseMove={handleMouseMove}>
-       
       <Background>
         <GradientOverlay x={mousePos.x} y={mousePos.y} />
         <Navbar />
-        <Section>
-          <Header>
-            <SocialMediaContainer>
-              <Portrait src={self} />
-              <SocialMedia />
-            </SocialMediaContainer>
-            <TextContainer>
-            <AdjustCard> 
 
-              <Title>
+        <HeroSection>
+          <HeroContainer>
+            <ProfileCard>
+              <AvatarWrap>
+                <Portrait src={self} alt="Eduardo" />
+                <AvatarGlow />
+              </AvatarWrap>
+
+              <TitleBlock>
+                <MiniTitle>Software Engineer</MiniTitle>
+                <MiniSub>NYC / NJ • Full-stack • React + Node</MiniSub>
+              </TitleBlock>
+
+              <SocialRow>
+                <SocialMedia />
+              </SocialRow>
+
+              <PrimaryActions>
+                <PrimaryButton onClick={handleSkillsClick}>
+                  My Journey <Arrow />
+                </PrimaryButton>
+
+                <SecondaryButton onClick={handleProjectsClick}>
+                  View Projects
+                </SecondaryButton>
+              </PrimaryActions>
+            </ProfileCard>
+
+            <HeroCopy>
+              <Name>
                 <Typewriter
-                  text="Eduardo Hernandez"
-                  typeSpeed={50}
-                  startDelay={500}
+                  text="Eduardo"
+                  typeSpeed={55}
+                  startDelay={350}
                   cursor={false}
                 />
-              </Title>
-              </AdjustCard> 
-
-              <Degree>
-              <AdjustCard> 
-
+              </Name>
+                <Name>
                 <Typewriter
-                  text="Software Engineer"
-                  typeSpeed={100}
-                  startDelay={1500}
+                  text="Hernandez"
+                  typeSpeed={55}
+                  startDelay={350}
                   cursor={false}
                 />
-              </AdjustCard> 
+              </Name>
 
-              </Degree>
-              <Description>
-                Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
-                and programming concepts. My passion for problem-solving drives me to excel in various aspects
-                of software development. I have extensive experience in testing software, full stack development, and debugging.
-              </Description>
-            </TextContainer>
-          </Header>
-          <CenterButton>
-            <ScrollButton onClick={handleScrollButtonClick}>
-              My Skillset <Arrow />
-            </ScrollButton>
-          </CenterButton>
-        </Section>
-        <SectionTwo ref={programmingLanguagesRef}>
-          <SkillsContainer>
+              <Tagline>
+                I build user-friendly products with strong backend fundamentals — clean APIs,
+                caching, and reliable UI.
+              </Tagline>
+
+              <Bio>
+                I’m a Stevens CS grad with experience in full-stack development, testing,
+                and debugging. I like building systems that feel fast, reliable, and easy to use.
+              </Bio>
+
+              <Chips>
+                <Chip>React</Chip>
+                <Chip>TypeScript</Chip>
+                <Chip>Node/Express</Chip>
+                <Chip>MongoDB</Chip>
+                <Chip>Redis</Chip>
+                <Chip>AWS</Chip>
+                <Chip>Testing</Chip>
+                <Chip>Python</Chip>
+                <Chip>Java</Chip>
+                <Chip>C++</Chip>
+   
+              </Chips>
+            </HeroCopy>
+          </HeroContainer>
+        </HeroSection>
+
+        <SkillsSection ref={skillsRef}>
+          <SectionHeader>
+            {/* <SectionTitle>Skillset</SectionTitle>
+            <SectionSubtitle>Tools I use to ship real products.</SectionSubtitle> */}
+          </SectionHeader>
+
+          {/* <SkillsContainer>
             {isVisible && (
               <>
                 <ProgrammingLanguages />
                 <Frameworks />
               </>
             )}
-          </SkillsContainer>
-        </SectionTwo>
+          </SkillsContainer> */}
+        </SkillsSection>
       </Background>
-  
     </AppContainer>
   );
 };
 
-const AdjustCard = styled.div`
-  margin-bottom: 25px;
-  `;
-
-const CenterButton = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%; /* Adjust to 100% to ensure full width alignment */
-  margin-left: 13vw;
-
-  @media (max-width: 768px) {
-    margin-top: 5vw;
-      margin-left: 3vw;
-
-  }
-`;
+/* -------------------- styles -------------------- */
 
 const AppContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
 `;
 
 const Background = styled.div`
-  background: black;
-  display: flex;
-  flex-direction: column;
+  background: #000;
   color: white;
-  text-align: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 `;
 
-const SectionTwo = styled.div`
-  padding: 9vw 0;
-  margin-top: 2vw;
-
-  @media (max-width: 768px) {
-    padding: 10vw 0;
-    margin-top: 5vw;
-  }
+const HeroSection = styled.section`
+  padding: calc(clamp(28px, 6vw, 72px) + 10px) 0 clamp(24px, 5vw, 56px);
 `;
 
-const Section = styled.div`
-  padding: 5vw 0;
-  margin-top: 2vw;
+// marke the card go down 
 
-  @media (max-width: 768px) {
-    padding: 10vw 0;
-    margin-top: 5vw;
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
+const HeroContainer = styled.div`
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: clamp(28px, 4vw, 60px); 
   align-items: center;
-  justify-content: center;
-  margin-top: 3.5vw;
-  font-family: 'Poppins', sans-serif;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    margin-top: 10vw;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
   }
 `;
 
-const SocialMediaContainer = styled.div`
-  background: transparent;
-  border: 4px solid #00cfcf;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 27vw;
-  width: 22vw;
-  padding: 15px;
-  transition: transform 0.3s;
-  margin-right: 1vw;
-  transform: translateX(4.5vw);
+const ProfileCard = styled.div`
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  padding: 20px 18px 18px;
+  border: 1px solid rgba(48, 207, 208, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 220ms ease, border-color 220ms ease;
 
   &:hover {
-    transform: scale(1.1) translateX(5vw);
+    transform: translateY(-4px);
+    border-color: rgba(48, 207, 208, 0.45);
   }
 
-  @media (max-width: 768px) {
-    height: 60vw;
-    width: 40vw;
-    margin-right: 0;
-    transform: translateX(0);
+  @media (max-width: 900px) {
+    max-width: 520px;
   }
+`;
+
+const AvatarWrap = styled.div`
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 6px;
 `;
 
 const Portrait = styled.img`
-  width: 19.5vw;
-  height: 18vw;
-  margin: 0;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
-  border: 5px solid transparent;
-  box-shadow: 10px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  border: 2px solid rgba(48, 207, 208, 0.35);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.55);
 
-  @media (max-width: 768px) {
-    width: 35vw;
-    height: 32vw;
+  @media (max-width: 500px) {
+    width: 180px;
+    height: 180px;
   }
 `;
 
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const AvatarGlow = styled.div`
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(22px);
+  opacity: 0.55;
+  background: radial-gradient(
+    circle,
+    rgba(48, 207, 208, 0.35),
+    rgba(51, 8, 103, 0.0) 60%
+  );
+  z-index: -1;
 
-  @media (max-width: 768px) {
-    align-items: center;
-    text-align: center;
+  @media (max-width: 500px) {
+    width: 220px;
+    height: 220px;
   }
 `;
 
-const Title = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5vw;
-  font-weight: 600;
-  margin-top: -1.5vw;
-
-  @media (max-width: 768px) {
-    font-size: 4vw;
-    gap: 30px;
-  }
-`;
-
-const Degree = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1vw;
-  font-weight: 400;
-
-  @media (max-width: 768px) {
-    font-size: 3.5vw;
-  }
-`;
-
-const Description = styled.p`
+/* NEW: centers title + subtitle as one block */
+const TitleBlock = styled.div`
+  width: 100%;
   text-align: center;
-  padding: 0 10vw;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5vw;
-  line-height: 2.5vw;
-  margin-top: -5px;
-
-  @media (max-width: 768px) {
-    font-size: 2vw;
-    padding: 0 5vw;
-    text-align: center;
-  }
+  margin-top: 14px;
 `;
 
-const ScrollButton = styled.button`
+const MiniTitle = styled.div`
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+`;
+
+const MiniSub = styled.div`
+  margin-top: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  opacity: 0.85;
+`;
+
+const SocialRow = styled.div`
+  margin-top: 14px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+`;
+
+const PrimaryActions = styled.div`
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+`;
+
+const buttonBase = `
+  width: 100%;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 4px auto;
-  padding: 10px 8vw;
-  font-size: 2vw;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #30cfd0, #330867);
-  color: #fff;
+  gap: 10px;
+
+  &:hover { transform: translateY(-1px); }
+  &:active { transform: translateY(0px); opacity: 0.9; }
+`;
+
+const PrimaryButton = styled.button`
+  ${buttonBase}
   border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  padding: 11px 16px;
+  font-size: 15.5px;
+  color: #fff;
+  background: linear-gradient(to bottom right, #30cfd0, #330867);
+`;
 
-  &:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+const SecondaryButton = styled.button`
+  ${buttonBase}
+  padding: 11px 16px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+`;
+
+const HeroCopy = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+
+  padding-left: 28px;
+  max-width: 680px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    padding-left: 0;
+    max-width: 100%;
+  }
+`;
+
+
+const Name = styled.h1`
+  font-family: 'Poppins', sans-serif;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  font-size: clamp(34px, 4vw, 64px);
+  line-height: 1.05;
+  margin: 0;
+
+  white-space: nowrap;
+  transform: translateX(2px);
+
+  @media (max-width: 900px) {
+    white-space: normal;
+    text-align: center;
+    transform: none;
+  }
+`;
+
+const Tagline = styled.p`
+  margin: 0;
+  max-width: 58ch;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.65;
+  opacity: 0.92;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+`;
+
+const Bio = styled.p`
+  margin: 0;
+  max-width: 62ch;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, 1.25vw, 18px);
+  line-height: 1.8;
+  opacity: 0.82;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+`;
+const Chips = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+
+  @media (min-width: 900px) {
+    justify-content: flex-start;
+    margin-left: 4px;
   }
 
-  @media (max-width: 768px) {
-    padding: 10px 15vw;
-    font-size: 5vw;
+  @media (max-width: 900px) {
+    justify-content: center;
   }
+`;
+
+
+
+
+const SkillsSection = styled.section`
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: clamp(10px, 2vw, 20px) 0 clamp(50px, 7vw, 90px);
+`;
+
+const SectionHeader = styled.div`
+  margin-top: 10px;
+  margin-bottom: 22px;
+`;
+
+const SectionTitle = styled.h2`
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(22px, 2.3vw, 30px);
+  font-weight: 700;
+`;
+
+const SectionSubtitle = styled.p`
+  margin: 8px 0 0;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.8;
+  font-size: 14px;
 `;
 
 const SkillsContainer = styled.div`
-  margin-top: -10vw;
-
-  @media (max-width: 768px) {
-    margin-top: -25vw;
-  }
+  margin-top: 10px;
 `;
 
+/* mouse effect — kept */
 const GradientOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -296,34 +414,24 @@ const GradientOverlay = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(circle at ${props => props.x}px ${props => props.y}px, rgba(0, 34, 68, 0.5) 0%, rgba(0, 34, 68, 0) 30%);
+  background: radial-gradient(
+    circle at ${(props) => props.x}px ${(props) => props.y}px,
+    rgba(0, 34, 68, 0.5) 0%,
+    rgba(0, 34, 68, 0) 30%
+  );
   transition: background 0.1s;
   mix-blend-mode: screen;
 `;
 
 const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
+  0% { opacity: 0; transform: translateY(-4px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(4px); }
 `;
 
 const Arrow = styled(FaArrowDown)`
-  margin-left: 10px;
-  font-size: 2vw;
+  font-size: 16px;
   animation: ${fadeInOut} 1.5s infinite;
-
-  @media (max-width: 768px) {
-    font-size: 4vw;
-  }
 `;
 
 export default MainPage;
