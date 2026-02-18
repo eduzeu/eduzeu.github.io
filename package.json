@@ -43,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://eduzeu.github.io/"
+  "homepage": "https://eduzeu.github.io/",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
