@@ -1,25 +1,17 @@
-import React, { useRef, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, {useState } from 'react';
+import styled from 'styled-components';
 import Navbar from '../NavBar';
 import self from "../images/self.jpeg";
-import { FaArrowDown } from 'react-icons/fa';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
 import Chip from './Chip';
 import Journey from './Journey';
 
 const MainPage = () => {
-  const skillsRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
     setMousePos({ x: e.clientX, y: e.clientY });
-  };
-
-  const scrollToSkills = () => {
-    setTimeout(() => {
-      skillsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 80);
   };
 
 const handleSkillsClick = () => {
@@ -30,10 +22,6 @@ const handleSkillsClick = () => {
 };
 
 
-  const handleProjectsClick = () => {
-    // Hook this up when you add a Projects section or route
-    // document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <AppContainer onMouseMove={handleMouseMove}>
@@ -62,9 +50,6 @@ const handleSkillsClick = () => {
                   View Journey
                 </PrimaryButton>
 
-                {/* <SecondaryButton onClick={handleProjectsClick}>
-                  View Projects
-                </SecondaryButton> */}
               </PrimaryActions>
             </ProfileCard>
 
@@ -279,14 +264,6 @@ const PrimaryButton = styled.button`
   background: linear-gradient(to bottom right, #30cfd0, #330867);
 `;
 
-const SecondaryButton = styled.button`
-  ${buttonBase}
-  padding: 11px 16px;
-  font-size: 15px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-`;
 
 const HeroCopy = styled.div`
   display: flex;
@@ -381,15 +358,5 @@ const GradientOverlay = styled.div`
   mix-blend-mode: screen;
 `;
 
-const fadeInOut = keyframes`
-  0% { opacity: 0; transform: translateY(-4px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(4px); }
-`;
-
-const Arrow = styled(FaArrowDown)`
-  font-size: 16px;
-  animation: ${fadeInOut} 1.5s infinite;
-`;
 
 export default MainPage;
