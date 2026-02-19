@@ -6,6 +6,7 @@ import music from "../images/music.png";
 import trivia from "../images/trivi.png";
 import wifly from "../images/wifly.png";
 import Chip from "./Chip";
+import mapmates from "../images/mapmates.png";
 
 function Projects() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -60,11 +61,11 @@ Deployed on AWS, it focuses on performance, clean APIs, and a smooth map-driven 
 
             <CardRight>
               <ImageLink
-                href="https://github.com/eduzeu/trivia"
+                href="https://github.com/eduzeu/mapmates"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Preview src={trivia} alt="Trivia Game preview" />
+                <Preview src={mapmates} alt="MapMates preview" />
               </ImageLink>
             </CardRight>
           </Card>

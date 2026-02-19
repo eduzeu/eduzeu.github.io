@@ -6,6 +6,7 @@ import { FaArrowDown } from 'react-icons/fa';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
 import Chip from './Chip';
+import Journey from './Journey';
 
 const MainPage = () => {
   const skillsRef = useRef(null);
@@ -21,9 +22,13 @@ const MainPage = () => {
     }, 80);
   };
 
-  const handleSkillsClick = () => {
-    scrollToSkills();
-  };
+const handleSkillsClick = () => {
+  document.getElementById("journey")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 
   const handleProjectsClick = () => {
     // Hook this up when you add a Projects section or route
@@ -52,15 +57,14 @@ const MainPage = () => {
               <SocialRow>
                 <SocialMedia />
               </SocialRow>
-
               <PrimaryActions>
                 <PrimaryButton onClick={handleSkillsClick}>
-                  My Journey <Arrow />
+                  View Journey
                 </PrimaryButton>
 
-                <SecondaryButton onClick={handleProjectsClick}>
+                {/* <SecondaryButton onClick={handleProjectsClick}>
                   View Projects
-                </SecondaryButton>
+                </SecondaryButton> */}
               </PrimaryActions>
             </ProfileCard>
 
@@ -108,6 +112,10 @@ const MainPage = () => {
             </HeroCopy>
           </HeroContainer>
         </HeroSection>
+
+        <div id="journey">
+        <Journey />
+      </div>
 
   
       </Background>
@@ -301,7 +309,7 @@ const Name = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-weight: 750;
   letter-spacing: -0.03em;
-  font-size: clamp(34px, 4vw, 64px);
+  font-size: clamp(37px, 3vw, 54px);
   line-height: 1.05;
   margin: 0;
 
