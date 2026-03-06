@@ -19,12 +19,12 @@ function Experience() {
         <Header>
           <Title>Experience</Title>
           <Subtitle>
-            Roles and projects where I shipped real work, learned fast, and focused on reliable systems.
+            Roles and projects where I shipped real products for users 
           </Subtitle>
         </Header>
 
         <Timeline>
-          {/* Interlix */}
+          {/* Interlix*/}
           <Item>
             <Left>
               <Dot />
@@ -41,10 +41,8 @@ function Experience() {
 
               <Body>
                 At Interlix, I worked as a Software Engineer, where I developed and maintained backend services
-                for the new hiring plaftorm using Node.js and Express. I implemented RESTful APIs to manage job
-                postings, applications, profile management and JWT authenthication. I also collaborated with the
-                front-end team to integrate APIs with React components, ensuring seamless user experience.
-                Additionally, I wrote unit tests using Jest to ensure code quality and reliability, and contributed
+                for the hiring plaftorm using Node.js and Express. I implemented RESTful APIs to manage job
+                postings, applications, profile management and JWT authenthication. I also wrote unit tests using Jest to ensure code quality and reliability, and contributed
                 to documentation for backend services and API endpoints.
               </Body>
 

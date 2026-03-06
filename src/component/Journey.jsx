@@ -29,8 +29,8 @@ const Journey = () => {
         title: "Stevens Institute of Technology",
         subtitle: "B.S. in Computer Science",
         details: [
-          "Full-stack development (React + Node)",
-          "Testing, debugging, and building reliable systems",
+          "Software Engineering, Data Structures and Algorithms, AI/ML",
+          "Internships, research, and TA roles in software engineering and CS courses",
         ],
         tags: ["Stevens", "B.S. CS"],
       },
@@ -40,10 +40,10 @@ const Journey = () => {
         subtitle: "Work + research + teaching",
         details: [
           "Software Engineer for NYC start-ups",
-          "Research Assistant at John Cabot University (Rome) + Bergen",
+          "Research Assistant at John Cabot University + Bergen",
           "TA and Tutor at Stevens + Bergen",
         ],
-        tags: ["NYC", "Rome", "Teaching"],
+        tags: ["NYC", "Rome"],
       },
     ],
     []

@@ -72,13 +72,14 @@ const handleSkillsClick = () => {
               </Name>
 
               <Tagline>
-                I build user-friendly products with strong backend fundamentals — clean APIs,
-                caching, and reliable UI.
+               I am passionate about software development, especially building, designing and 
+               scaling backend systems and APIs. 
+               I also enjoy working on frontend interfaces and improving user experience.
               </Tagline>
 
               <Bio>
-                I’m a Stevens CS grad with experience in full-stack development, testing,
-                and debugging. I like building systems that feel fast, reliable, and easy to use.
+                I’m a Stevens CS grad with experience in full-stack development. 
+                I like building systems that feel fast, reliable, and easy to use.
               </Bio>
 
               <Chips>

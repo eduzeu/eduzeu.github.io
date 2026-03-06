@@ -24,7 +24,9 @@ function Projects() {
         <Header>
           <Title>Projects</Title>
           <Subtitle>
-            A few things I’ve built — focused on clean UI, solid backend fundamentals, and real-world features.
+            My projects include a mix of personal and collaborative work, 
+            here's a selection of projects that showcase my skills and interests in software development
+
           </Subtitle>
         </Header>
 
@@ -35,9 +37,9 @@ function Projects() {
               <CardTitle>MapMates</CardTitle>
               <CardBody>
               MapMates is a full-stack web app that lets users discover, save, and track restaurants on an interactive map.
-It features a React + Leaflet frontend with a TypeScript/Node.js backend, using MongoDB for persistence and Redis for caching visited locations.
-The app supports marking places as visited, preventing duplicate markers, and syncing user activity across sessions.
-Deployed on AWS, it focuses on performance, clean APIs, and a smooth map-driven user experience.
+              It features a React + Leaflet frontend with a TypeScript/Node.js backend, using MongoDB for persistence and Redis for caching visited locations.
+              The app supports marking places as visited, preventing duplicate markers, and syncing user activity across sessions.
+              Deployed on AWS, it focuses on performance, clean APIs, and a smooth map-driven user experience.
               </CardBody>
 
               <ChipRow>
