@@ -7,6 +7,7 @@ import trivia from "../images/trivi.png";
 import wifly from "../images/wifly.png";
 import Chip from "./Chip";
 import mapmates from "../images/mapmates.png";
+import soon from "../images/soon.jpg";
 
 function Projects() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -31,7 +32,54 @@ function Projects() {
         </Header>
 
         <Grid>
+            <Card>
+              <CardLeft>
+                <CardTitle>Career Copilot</CardTitle>
+                <CardBody>
+                  Career Copilot is an AI-powered assistant designed to help users navigate their job search. 
+                  It provides personalized guidance on resume building, job posting analysis and resume score as well as application tracking.
+                  You will be able to upload your resume and the job description of the role you want to apply for, and Career Copilot will analyze both documents, 
+                  providing you with a resume score and actionable feedback on how to improve your resume to better match the job requirements. You can also track your job applications,
+                   and receive tips on interview preparation.
+                </CardBody>
 
+                
+              <ChipRow>
+                <Chip>Python/Fast API</Chip>
+                <Chip>Typescript</Chip>
+                 <Chip>React</Chip>
+                <Chip>Amazon S3</Chip>
+                <Chip>OpenAI API</Chip>
+                <Chip> SQL </Chip>
+
+              </ChipRow>
+
+              
+              <Actions>
+                <PrimaryLink
+                  href="https://github.com/eduzeu/copilot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on GitHub
+                </PrimaryLink>
+              </Actions>
+
+              </CardLeft>
+
+              <CardRight>
+              <ImageLink
+                href="https://github.com/eduzeu/copilot"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Preview src={soon} alt="Career Copilot preview" />
+              </ImageLink>
+            </CardRight>
+            </Card>
+
+
+            {/* MapMates */}
             <Card>
             <CardLeft>
               <CardTitle>MapMates</CardTitle>
@@ -49,6 +97,7 @@ function Projects() {
                 <Chip>React</Chip>
 
               </ChipRow>
+
 
               <Actions>
                 <PrimaryLink
